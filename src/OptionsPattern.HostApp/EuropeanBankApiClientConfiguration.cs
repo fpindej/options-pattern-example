@@ -7,7 +7,7 @@ public sealed class EuropeanBankApiClientConfiguration
     public const string SectionName = "EuropeanBankApiClient";
 
     [Required]
-    public Uri BaseUrl { get; init; }
+    public required Uri BaseUrl { get; init; }
 
     public string DefaultCurrency { get; init; } = "EUR";
 
