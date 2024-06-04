@@ -1,8 +1,11 @@
-﻿using Microsoft.Extensions.Hosting;
+﻿using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Hosting;
 
-var builder = Host.CreateEmptyApplicationBuilder(new HostApplicationBuilderSettings
+var builder = Host.CreateDefaultBuilder(args);
+
+builder.ConfigureAppConfiguration(cfg =>
 {
-    Args = args
+    cfg.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
 });
 
 var app = builder.Build();
